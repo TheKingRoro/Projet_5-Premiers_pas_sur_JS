@@ -26,19 +26,24 @@ const slidestrytagline = ["Impressions tous formats <span>en boutique et en lign
 	"Grand choix de couleurs <span>de CMJN aux pantones</span>",
 	"Autocollants <span>avec découpe laser sur mesure</span>"]
 
-let numero = 0;
+const slidedot = document.querySelectorAll(".dot")
+
+console.log(slidedot)
+
+let i = 0;
 
 function ArrowSlide(sens) {
-	numero = numero + sens;
-	if (numero > 3)
-		numero = 0;
-	if (numero < 0)
-		numero = 3;
-	document.getElementById("image").src = "./assets/images/slideshow/" + slidestry[numero];
-	document.getElementById("tagLine").innerHTML = slidestrytagline[numero];
-
+	i = i + sens;
+	if (i > 3)
+		i = 0;
+	if (i < 0)
+		i = 3;
+	document.getElementById("image").src = "./assets/images/slideshow/" + slidestry[i];
+	document.getElementById("tagLine").innerHTML = slidestrytagline[i];
+	document.getElementById("dot").classList.add("dot_selected") = slidedot[i]
 }
 
-function changeClass() {
-	dot2.style.backgroundColor = "#fff"
-}
+
+
+
+
