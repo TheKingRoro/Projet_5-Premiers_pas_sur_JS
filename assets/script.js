@@ -1,4 +1,4 @@
-const slides = [
+/*const slides = [
 	{
 		"image": "slide1.jpg",
 		"tagLine": "Impressions tous formats <span>en boutique et en ligne</span>"
@@ -16,7 +16,7 @@ const slides = [
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 
-]
+]*/
 
 const slidestry = ["slide1.jpg", "slide2.jpg", "slide3.jpg", "slide4.png"];
 
@@ -26,13 +26,17 @@ const slidestrytagline = ["Impressions tous formats <span>en boutique et en lign
 	"Grand choix de couleurs <span>de CMJN aux pantones</span>",
 	"Autocollants <span>avec découpe laser sur mesure</span>"]
 
-const slidedot = document.querySelectorAll(".dot")
-
-console.log(slidedot)
+window.addEventListener(
+	"DOMContentLoaded", (event) => {
+		const slidedot = document.querySelectorAll(".dot")
+		console.log(slidedot)
+});
 
 let i = 0;
+let y = 3;
 
 function ArrowSlide(sens) {
+	y = i;
 	i = i + sens;
 	if (i > 3)
 		i = 0;
@@ -40,9 +44,9 @@ function ArrowSlide(sens) {
 		i = 3;
 	document.getElementById("image").src = "./assets/images/slideshow/" + slidestry[i];
 	document.getElementById("tagLine").innerHTML = slidestrytagline[i];
-	document.getElementById("dot").classList.add("dot_selected") = slidedot[i]
+	document.getElementById("dot"+y).classList.remove("dot_selected");
+	document.getElementById("dot"+i).classList.add("dot_selected");
 }
-
 
 
 
