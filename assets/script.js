@@ -7,27 +7,25 @@ const slidestrytagline = ["Impressions tous formats <span>en boutique et en lign
 
 window.addEventListener(
 	"DOMContentLoaded", (event) => {
-		
+
 		// pointer l'id de la div "dots-line"
 		var p = document.getElementById("dots-line");
-		
+
 		// boucle de création des dots
-		for(var i=1; i<=(slidestry.length - 1); i++) {
-			var e= document.createElement("div");
-			e.id = "dot"+i;
+		for (var i = 1; i <= (slidestry.length - 1); i++) {
+			var e = document.createElement("div");
+			e.id = "dot" + i;
 			e.className = "dot";
 			p.appendChild(e);
 		}
-		
-		const slidedot = document.querySelector(".dot");
-		console.log(slidedot);
-}
-, false);
+	}
+);
 
 let i = 0;
 let y = (slidestry.length - 1);
 
 function ArrowSlide(sens) {
+
 	y = i;
 	i = i + sens;
 	if (i > (slidestry.length - 1))
@@ -36,6 +34,6 @@ function ArrowSlide(sens) {
 		i = (slidestry.length - 1);
 	document.getElementById("image").src = "./assets/images/slideshow/" + slidestry[i];
 	document.getElementById("tagLine").innerHTML = slidestrytagline[i];
-	document.getElementById("dot"+y).classList.remove("dot_selected");
-	document.getElementById("dot"+i).classList.add("dot_selected");
+	document.getElementById("dot" + y).classList.remove("dot_selected");
+	document.getElementById("dot" + i).classList.add("dot_selected");
 };
