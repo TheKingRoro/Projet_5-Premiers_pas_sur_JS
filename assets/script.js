@@ -9,12 +9,12 @@ window.addEventListener(
 	"DOMContentLoaded", (event) => {
 
 		// pointer l'id de la div "dots-line"
-		var p = document.getElementById("dots-line");
+		let p = document.getElementById("dots-line");
 
 		// boucle de création des dots
-		for (var i = 1; i <= (slidestry.length - 1); i++) {
-			var e = document.createElement("div");
-			e.id = "dot" + i;
+		for (let z = 1; z <= (slidestry.length - 1); z++) {
+			let e = document.createElement("div");
+			e.id = "dot" + z;
 			e.className = "dot";
 			p.appendChild(e);
 		}
@@ -25,7 +25,6 @@ let i = 0;
 let y = (slidestry.length - 1);
 
 function ArrowSlide(sens) {
-
 	y = i;
 	i = i + sens;
 	if (i > (slidestry.length - 1))
