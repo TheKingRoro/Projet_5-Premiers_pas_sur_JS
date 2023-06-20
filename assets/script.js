@@ -45,4 +45,3 @@ function arrowSlide(sens) {
   document.getElementById("dot" + i).classList.add("dot_selected");
 }
 
-console.log(arrowSlide);
