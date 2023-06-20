@@ -8,10 +8,17 @@ const slidesTagline = [
   "Autocollants <span>avec découpe laser sur mesure</span>",
 ];
 
+//Curseur sur flèches
+const arrowLeft = document.querySelector(".arrow_left");
+arrowLeft.style.cursor = "pointer";
+
+const arrowRight = document.querySelector(".arrow_right");
+arrowRight.style.cursor = "pointer"
+
+//Ajout de bullet-point en fonction du nbre de slide
 window.addEventListener("DOMContentLoaded", (event) => {
   // Sélectionner la div parent #dots-line
   let dotsLine = document.getElementById("dots-line");
-
   // Boucle de création des child .dot
   for (let z = 1; z <= slidesImage.length - 1; z++) {
     let newDot = document.createElement("div");
@@ -25,6 +32,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 let i = 0;
 let y = slidesImage.length - 1;
 
+//Caroussel à diaporama infini
 function arrowSlide(sens) {
   y = i;
   i = i + sens;
